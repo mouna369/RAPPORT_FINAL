@@ -7,7 +7,7 @@
 // ====================================
 
 = Introduction générale
-
+#v(0.8cm) 
 
 #h(0.5cm) La transformation numérique des entreprises de *télécommunications* ne se mesure plus à la densité de leur réseau ou à la vitesse de leurs connexions. Elle se lit désormais dans leur capacité à comprendre, en temps réel, ce que leurs abonnés expriment sur les plateformes sociales. Ce déplacement du lieu de la relation client des agences physiques vers *les espaces numériques* ouverts génère un flux textuel continu d'une richesse analytique considérable, mais d'une complexité algorithmique redoutable.
 

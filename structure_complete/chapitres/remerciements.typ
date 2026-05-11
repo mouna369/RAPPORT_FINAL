@@ -5,12 +5,9 @@
 
 #set par(justify: true)
 = Remerciements
-
+#v(1cm) 
 // Ajoutez votre texte de remerciements ici
 
 
-#align(bottom + right)[
-  *Les auteurs*
-]
 
 #pagebreak()

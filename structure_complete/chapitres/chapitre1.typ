@@ -38,7 +38,8 @@ Algéria télécom a été constituée Dans la forme juridique d'une société p
       stroke: 0pt + black,
       image("../images/Logo_Algérie_Télécom.svg", width: 6cm)
     ),
-    caption: [Logo d'Algérie Télécom .]
+    caption: [Logo d'Algérie Télécom .],
+    kind: image
   )
 ]
 #v(0.5cm)
@@ -94,7 +95,8 @@ L’organisation hiérarchique et fonctionnelle est synthétisée dans l’organ
       stroke: 0pt + black,
       image("../images/organigramme_telecon.png", width: 15cm)
     ),
-    caption: [Organigramme d’Algérie Télécom]
+    caption: [Organigramme d’Algérie Télécom],
+  kind: image
   )
 ]
 
@@ -142,7 +144,8 @@ L’organigramme ci-dessous illustre la position du service d’accueil au sein 
       stroke: 0pt + black,
       image("../images/organigramme_division.png", width: 15cm)
     ),
-    caption: [Organigramme de la Division des Systèmes d’Information]
+    caption: [Organigramme de la Division des Systèmes d’Information],
+  kind: image
   )
 ]
 

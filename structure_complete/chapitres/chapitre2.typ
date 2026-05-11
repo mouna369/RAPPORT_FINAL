@@ -26,11 +26,8 @@ Les méthodes dites *lexico-règles* constituent le socle historique de l'analys
     
     Au cœur de cette approche, les méthodes lexicales fondamentales assignent des scores aux mots en s'appuyant sur deux grands cadres théoriques :
     - *Les théories des émotions de base* (joie, tristesse, colère) ;
-    - *Les théories dimensionnelles* (valence et arousal) 
-    // @jurafskymartin2026.
-    La construction de ces lexiques peut suivre différentes méthodologies 
-    
-    // @jurafskymartin2026 :
+- *Les théories dimensionnelles* (valence et arousal) @JurafskyMartin2026.
+La construction de ces lexiques peut suivre différentes méthodologies @JurafskyMartin2026 :
 
     // 
     + *Manuelle* : comme pour le dictionnaire ANEW ;
@@ -55,7 +52,8 @@ Les méthodes dites *lexico-règles* constituent le socle historique de l'analys
         [Produit absolument horrible], [#text[horrible]], [#text[*-0.920 (Négatif)*]],
         [Interface utilisateur intuitive], [#text[intuitive]], [#text[*+0.780 (Positif)*]]
       ),
-      caption: [Exemples de classification par approche lexicale ]
+      caption: [Exemples de classification par approche lexicale ],
+  kind: table
     )
 
 *2.De la syntaxe aux systèmes hybrides*
@@ -80,7 +78,8 @@ Les méthodes dites *lexico-règles* constituent le socle historique de l'analys
         [Le réseau est excellent MAIS la connexion saute !], [#text(fill: rgb("000000"))[Contraste]], [Pondération vers un score global négatif],
         [Adorer ce service], [#text(fill: rgb("000000"))[Connotation]], [Agent positif / Thème agréable]
       ),
-      caption: [Impact des règles syntaxiques et hybrides ]
+      caption: [Impact des règles syntaxiques et hybrides ],
+  kind: table
     )
 #v(0.5cm)
 *3.Limites des approches traditionnelles*
@@ -104,7 +103,8 @@ Les méthodes dites *lexico-règles* constituent le socle historique de l'analys
     [Domaines spécifiques], [Nécessité d'adapter les lexiques à chaque nouveau métier (ex: jargon médical, juridique)],
     [Portabilité], [Faible transférabilité entre différentes langues et cultures]
   ),
-  caption: [Principales limitations des systèmes lexico-règles.]
+  caption: [Principales limitations des systèmes lexico-règles.],
+  kind: table
 )
 #v(0.5cm)
     Ce "plafond de verre", notamment face à l'ironie, a naturellement motivé le passage vers des méthodes plus flexibles fondées sur l'apprentissage automatique @liu2012sentiment.
@@ -156,7 +156,8 @@ Ces méthodes ont dominé la littérature en analyse de sentiments pendant plusi
     [*Régression logistique*], [Fonction logistique, modélisation directe de $P(Y|X)$ ], [Discriminatif, linéaire, interprétable],
     [*SVM*], [Hyperplan à marge maximale, fonctions noyau ], [Discriminatif, non linéaire, robuste en haute dimension]
   ),
-  caption: [Comparaison des méthodes d'apprentissage automatique pour l'analyse de sentiments]
+  caption: [Comparaison des méthodes d'apprentissage automatique pour l'analyse de sentiments],
+  kind: table
 )
 
 === Approches par apprentissage profond (Deep Learning)
@@ -194,8 +195,10 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
     [Meilleur - Bon + Mauvais], 
     [$("meilleur") - "bon") + ("mauvais")$], 
     [$approx bold("pire")$]
-  ),
-  caption: [Exemples de relations sémantiques capturées par Word2Vec ]
+  ,
+),
+  caption: [Exemples de relations sémantiques capturées par Word2Vec ],
+  kind: table
 )
     Parallèlement, les *réseaux de neurones feedforward* ont été utilisés pour des tâches de classification de textes. En prenant en entrée la moyenne (pooling) des embeddings des mots d'un document, ces réseaux, composés d'une ou plusieurs couches cachées avec des fonctions d'activation non linéaires (ReLU, tanh), peuvent apprendre des frontières de décision plus complexes que la régression logistique @JurafskyMartin2026.
     
@@ -230,7 +233,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         [Je ne suis pas satisfait], [$h_1("Je") -> h_2("ne") -> h_3("suis") -> h_4("pas") -> h_5("satisfait") -> "classification"$],
         [Produit correct mais cher], [$h_1("Produit") -> h_2("correct") -> h_3("mais") -> h_4("cher") -> "classification"$]
       ),
-      caption: [Traitement séquentiel des phrases par un RNN]
+      caption: [Traitement séquentiel des phrases par un RNN],
+  kind: table
     )
     
     Cependant, les RNNs simples souffrent du problème de *disparition du gradient (vanishing gradient)* lors de l'entraînement sur de longues séquences, ce qui les rend incapables d'apprendre des dépendances à long terme @JurafskyMartin2026.
@@ -286,7 +290,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
     [Porte d'entrée (input gate)], [$sigma(W_i dot [h_{t-1}, x_t] + b_i)$], [Décide quelle information stocker],
     [Porte de sortie (output gate)], [$sigma(W_o dot [h_{t-1}, x_t] + b_o)$], [Décide quelle information produire]
   ),
-  caption: [Mécanisme des portes dans un LSTM]
+  caption: [Mécanisme des portes dans un LSTM],
+  kind: table
 )
     
     En analyse de sentiments, les LSTMs, souvent utilisés en version bidirectionnelle (*BiLSTM*) pour capturer le contexte à la fois à gauche et à droite d'un mot, ont montré d'excellentes performances @JurafskyMartin2026.
@@ -307,7 +312,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         [Zain], [BiLSTM], [97.1%],
         [*Moyenne*], [*BiLSTM*], [*97.03%*]
       ),
-      caption: [Performance du modèle BiLSTM sur les tweets des opérateurs saoudiens ]
+      caption: [Performance du modèle BiLSTM sur les tweets des opérateurs saoudiens ],
+  kind: table
     )
     
     Dans le secteur des télécommunications, Alshamari @alshamari2023evaluating a appliqué avec succès une architecture BiLSTM pour analyser la satisfaction des clients des trois principaux opérateurs saoudiens (STC, Mobily, Zain) à partir d'un corpus de tweets en arabe (*AraCust*). Son étude a révélé une tendance globalement négative des opinions et a démontré la supériorité du modèle LSTM (précision de test de 97,03%) par rapport aux autres architectures neuronales testées (GRU, BiLSTM, CNN-LSTM).
@@ -331,7 +337,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         ["La connexion 4G fonctionne bien"], ["bien"], ["connexion", "fonctionne", "bien"],
         ["Produit cher mais de qualité"], ["mais"], ["cher", "qualité", "mais"]
       ),
-      caption: [Mécanisme d'auto-attention : poids d'attention sur différents mots]
+      caption: [Mécanisme d'auto-attention : poids d'attention sur différents mots],
+  kind: table
     )
     
     Deux grandes familles de modèles, pré-entraînés sur d'immenses corpus, ont émergé de cette architecture :
@@ -353,7 +360,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         ["La connexion est vraiment [MASK]"], ["lente", "rapide", "instable"],
         ["Je [MASK] cet opérateur"], ["recommande", "déteste", "choisis"]
       ),
-      caption: [Apprentissage par masquage (Masked Language Modeling) de BERT ]
+      caption: [Apprentissage par masquage (Masked Language Modeling) de BERT ],
+  kind: table
     )
 
     *b) Les modèles de type GPT* (Generative Pre-trained Transformer). Ce sont des *décodeurs causals* (ou autorégressifs) qui apprennent à prédire le mot suivant dans une séquence, en ne voyant que le contexte gauche.
@@ -373,7 +381,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         ["Explique pourquoi ce tweet est négatif : 'Connexion lente' →"], [" Le tweet exprime une insatisfaction concernant la vitesse de connexion."],
         ["Ce commentaire est-il positif ou négatif ? 'Prix correct' →"], [" Plutôt neutre, 'correct' n'est ni très positif ni très négatif."]
       ),
-      caption: [Capacité de génération et d'explication des modèles GPT]
+      caption: [Capacité de génération et d'explication des modèles GPT],
+  kind: table
     )
 
 *4.Modèles hybrides et optimisation*
@@ -396,7 +405,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         [BERT], [1M tweets], [93.5%],
         [SVS-IAdaBoost], [1M tweets], [#text[*95.1%*]]
       ),
-      caption: [Performance comparative du modèle hybride SVS-IAdaBoost ]
+      caption: [Performance comparative du modèle hybride SVS-IAdaBoost ],
+  kind: table
     )
     
     Testé sur plus d'un million de tweets, ce modèle a atteint une précision de 95,1%, illustrant le potentiel des méthodes hybrides pour traiter le volume et le déséquilibre des données, des défis centraux pour les opérateurs télécoms.
@@ -421,7 +431,8 @@ L'avènement de l'apprentissage profond (deep learning) a marqué un tournant d�
         [2019-2022], [Transformers (encodeurs)], [Contexte bidirectionnel profond], [BERT, RoBERTa, XLNet],
         [2022-présent], [Grands modèles de langue], [Génération + contexte], [GPT-3/4, Llama, Claude]
       ),
-      caption: [Évolution des représentations en TAL.]
+      caption: [Évolution des représentations en TAL.],
+  kind: table
     )
     
     - Des *représentations statiques* (Word2Vec, GloVe), où chaque mot a un vecteur fixe, quel que soit le contexte.
@@ -468,7 +479,8 @@ Ces spécificités rendent nécessaires l'adaptation de modèles de langage pré
     [Sentiment Analysis], [HARD], [96.2 %], [95.7 %], [+0.5 %],
     [NER], [ANERcorp], [84.2 F1], [78.4 F1], [+5.8]
   ),
-  caption: "Comparaison des performances AraBERT vs mBERT"
+  caption: "Comparaison des performances AraBERT vs mBERT",
+  kind: table
 )
 
 L'utilisation de la segmentation morphologique améliore les performances en SA et QA mais peut réduire légèrement la précision en NER en raison de la fragmentation des entités.
@@ -503,7 +515,8 @@ L'utilisation de la segmentation morphologique améliore les performances en SA 
     [MARBERT], [75.99],
     [AraBERT], [73.91]
   ),
-  caption: "Scores ARLUE des principaux modèles "
+  caption: "Scores ARLUE des principaux modèles ",
+  kind: table
 )
 
 L'efficacité du modèle dépend fortement de la proximité variétale entre les données de pré-entraînement et les données de fine-tuning.
@@ -530,7 +543,8 @@ L'efficacité du modèle dépend fortement de la proximité variétale entre les
     [$"CAMeLBERT-CA"$], [Livres anciens], [Arabe classique],
     [$"CAMeLBERT-Mix"$], [Combinaison de tous les corpus], [Cas mixtes si ressources limitées]
   ),
-  caption: "Variantes de CAMeLBERT"
+  caption: "Variantes de CAMeLBERT",
+  kind: table
 )
 
 Les expériences montrent que l'adéquation de la variante linguistique entre le pré-entraînement et la tâche spécifique est plus importante que la taille totale du corpus.
@@ -559,7 +573,8 @@ Les expériences montrent que l'adéquation de la variante linguistique entre le
     [CAMeLBERT], [MSA / DA / CA / Mix], [Spécialisé selon la variante], [Taille corpus parfois réduite],
     [mBERT / XLM-R], [Multilingue], [Polyvalent, bonne couverture cross-lingual], [Moins performant sur tâches spécifiques à l'arabe]
   ),
-  caption: "Synthèse comparative des modèles de langage pour l'arabe"
+  caption: "Synthèse comparative des modèles de langage pour l'arabe",
+  kind: table
 )
 
 === État des lieux sur le dialecte algérien (Darija) 
@@ -646,7 +661,8 @@ L'Arabizi est une pratique courante consistant à transcrire l'arabe en caractè
     [9], [ق], [9al], [قال],
     [2], [ء], [sa2el], [سائل]
   ),
-   caption: [Correspondance chiffres-phonèmes en Arabizi ]
+   caption: [Correspondance chiffres-phonèmes en Arabizi ],
+  kind: table
 )
 
 
@@ -671,7 +687,8 @@ La Darija varie considérablement selon les régions algériennes (Alger, Oran, 
     [Constantine], [Choukran], [Ça va ? / Rak hani ?],
     [Sud], [Allah ykhalik], [Ça va ? / Labas 3lik ?]
   ),
-  caption: [Variations régionales du dialecte algérien]
+  caption: [Variations régionales du dialecte algérien],
+  kind: table
 )
 
 
@@ -736,7 +753,8 @@ Contrairement à l'arabe standard, les ressources annotées pour la Darija algé
     [Algerian Dialect], [45 000 commentaires], [YouTube DZ], [Sentiment 5 classes], [Publique],
     [DZDialect], [117 569 commentaires], [Social media], [Sentiment], [Publique],
   ),
-  caption: [Principaux corpus pour le dialecte algérien ]
+  caption: [Principaux corpus pour le dialecte algérien ],
+  kind: table
 )
 
 *2. Lexiques et dictionnaires*
@@ -757,7 +775,8 @@ Contrairement à l'arabe standard, les ressources annotées pour la Darija algé
     [DziriBERT Vocab], [Embeddings], [~30 000 tokens], [Spécifique DZ, pas lexique pur],
     [Darija DZ App], [Phrases courantes], [~2 000 expressions], [Didactique, non académique],
   ),
-  caption: [Lexiques et vocabulaires pour Darija algérienne]
+  caption: [Lexiques et vocabulaires pour Darija algérienne],
+  kind: table
 )
 
 
@@ -797,7 +816,8 @@ L'étude de Benali et al. (2025) a établi le premier benchmark complet pour l'a
     [MARBERT], [Transformer], [87.1%], [0.87],
     [DziriBERT + LoRA], [PEFT hybride], [89.3%], [0.89]
   ),
-  caption: [Benchmarks récents sur Darija algérienne ]
+  caption: [Benchmarks récents sur Darija algérienne ],
+  kind: table
 )
 
 
@@ -869,7 +889,8 @@ Le PEFT regroupe un ensemble de techniques visant à adapter les LLM en modifian
     [LoRA], [1-2%], [Faible], [97-99%],
     [Prefix Tuning], [0,5-1%], [Très faible], [94-97%],
   ),
-  caption: [Comparaison des techniques PEFT ]
+  caption: [Comparaison des techniques PEFT ],
+  kind: table
 ) <peft-comparison>
 
 *3. LoRA (Low-Rank Adaptation)*
@@ -915,7 +936,8 @@ L'analyse de sentiments a donné lieu au développement de nombreux outils et pl
         ["terrible#1"], ["a"], [0.0], [0.75],
         ["love#1"], ["v"], [0.625], [0.0]
       ),
-      caption: [Exemples d'entrées dans SentiWordNet ]
+      caption: [Exemples d'entrées dans SentiWordNet ],
+  kind: table
     )
     
     Une implémentation Node.js, `sentiword`, permet d'utiliser cette ressource avec analyse grammaticale (POS tagging) pour améliorer la précision : le texte est d'abord analysé pour identifier la nature grammaticale de chaque mot, puis la recherche de sentiment est restreinte aux entrées correspondant à cette catégorie grammaticale.
@@ -946,7 +968,8 @@ L'analyse de sentiments a donné lieu au développement de nombreux outils et pl
         ["This is great!!"], [0.700], [0.300], [0.0],
         ["I love it "], [0.784], [0.216], [0.0]
       ),
-      caption: [Effet des heuristiques VADER sur les scores]
+      caption: [Effet des heuristiques VADER sur les scores],
+  kind: table
     )
     
     VADER produit un score *compound* normalisé entre -1 (négatif extrême) et +1 (positif extrême). Il est extrêmement rapide (traitement d'environ 10 000 textes par seconde) et ne nécessite pas de GPU, ce qui le rend adapté aux déploiements à grande échelle.
@@ -984,7 +1007,9 @@ L'analyse de sentiments a donné lieu au développement de nombreux outils et pl
           else { white },
         stroke: 0.5pt + black,
         [#text(fill: black)[*Classe*]], [#text(fill: black)[*Critère d'annotation*]], [#text(fill: black)[*Volume*]],
-        [Positif], [Présence de ":)", ":-)", ":D"], [~800 000],
+        [Positif], [Présence de ":)", ":-,
+  kind: table
+)", ":D"], [~800 000],
         [Négatif], [Présence de ":(", ":-(", ":'("], [~800 000],
         [Neutre], [Absence d'émoticônes ou présence des deux], [Non inclus]
       ),
@@ -1017,7 +1042,8 @@ L'analyse de sentiments a donné lieu au développement de nombreux outils et pl
         [Temps d'inférence (CPU)], [~35 ms par prédiction],
         [Taille du modèle], [268 Mo (67 Mo après quantification INT8)]
       ),
-      caption: [Caractéristiques du modèle customer-sentiment-analyzer]
+      caption: [Caractéristiques du modèle customer-sentiment-analyzer],
+  kind: table
     )
     
     Les modèles Hugging Face peuvent être déployés en production via des API (FastAPI), conteneurisés avec Docker, et optimisés via quantification pour réduire leur empreinte mémoire.
@@ -1045,7 +1071,8 @@ Les plateformes de *social listening* (écoute sociale) sont des solutions inté
     [Meltwater], [ Reconnaissance d'émotions], [Archive 15 mois], [Sur devis],
     [Sprinklr], [ GenAI], [Archive étendue], [Sur devis]
   ),
-  caption: [Comparaison des principales plateformes de social listening]  
+  caption: [Comparaison des principales plateformes de social listening],
+  kind: table  
 )   
 
 *Critères de sélection* : Le choix d'une plateforme dépend de plusieurs facteurs :

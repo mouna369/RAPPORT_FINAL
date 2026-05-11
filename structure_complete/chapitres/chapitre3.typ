@@ -298,6 +298,7 @@ Pour chaque terme $t$ et chaque classe $c$, on construit une table de contingenc
 
 #figure(
   caption: [Table de contingence pour le calcul du Chi² d'un terme],
+  kind: table,
   table(
     columns: (2fr, 1.5fr, 1.5fr, 1.5fr),
     inset: (x: 7pt, y: 5pt),
@@ -448,7 +449,8 @@ Afin de clarifier visuellement ces notions, la *Figure* suivante présente une c
       stroke: 1.5pt + black,
       image("../images/type de classification.png", width: 10cm)
     ),
-    caption: [Comparaison des trois types de classification : binaire, multi-classes et multi-label ]
+    caption: [Comparaison des trois types de classification : binaire, multi-classes et multi-label ],
+  kind: image
   )
 ]<type_classfication>
 
@@ -624,6 +626,7 @@ le modèle est testé sur des données inédites (20% restants) pour mesurer sa 
 
 // #figure(
 //   caption: [Comparaison entre stemming et lemmatisation],
+  kind: table,
 //   table(
 //     columns: (1.2fr, 2.5fr, 1.5fr, 1.5fr),
 //     align: (left, left, left, left),
@@ -643,6 +646,7 @@ le modèle est testé sur des données inédites (20% restants) pour mesurer sa 
 
 // #figure(
 //   caption: [Exemples de lemmatisation dans différentes langues],
+  kind: table,
 //   table(
 //     columns: (1fr, 2fr, 1.5fr, 2.5fr),
 //     align: (left, left, left, left),
@@ -681,6 +685,7 @@ le modèle est testé sur des données inédites (20% restants) pour mesurer sa 
 
 // #figure(
 //   caption: [Différentes approches de représentation vectorielle des mots],
+  kind: table,
 //   table(
 //     columns: (1fr, 3fr),
 //     align: (left, left),
@@ -708,6 +713,7 @@ le modèle est testé sur des données inédites (20% restants) pour mesurer sa 
 
 // #figure(
 //   caption: [Métriques d'évaluation pour la classification de textes],
+  kind: table,
 //   table(
 //     columns: (2fr, 2fr, 3fr),
 //     align: (left, center, left),
@@ -743,7 +749,8 @@ La Figure présente une synthèse des six étapes du processus de classification
     
       image("../images/pipline_classsification.png", width: 15cm)
     ),
-    caption: [Comparaison des trois types de classification : binaire, multi-classes et multi-label ]
+    caption: [Comparaison des trois types de classification : binaire, multi-classes et multi-label ],
+  kind: image
   )
 ]<type_classfication>
 
@@ -947,6 +954,7 @@ Pour un corpus de posts clients Algérie Télécom, un pipeline de normalisation
 
 #figure(
   caption: [Pipeline de normalisation proposé pour corpus Darija/Arabizi],
+  kind: table,
   table(
     columns: 2,
     align: (left),
@@ -1208,13 +1216,15 @@ Les interactions issues des réseaux sociaux (Facebook, Twitter/X, forums) répo
       stroke: 1pt + black,
       image("../images/les 5v.png", width: 7cm)
     ),
-    caption: [Les 5 Dimensions du Big Data .]
+    caption: [Les 5 Dimensions du Big Data .],
+  kind: image
   )
 ]
 \
 *Analyse d'Impact des 5V sur l'Architecture Système*: @AzureBigData2025
 #figure(
   caption: [Analyse d'Impact des 5V sur l'Architecture Système],
+  kind: table,
   table(
     columns: (auto, 0.4fr, 0.25fr),
     align: center + horizon,
@@ -1289,6 +1299,7 @@ Le choix entre Batch et Streaming n'est pas binaire mais dépend du compromis ac
 
 #figure(
   caption: [Comparaison : Traitement par Lots vs Traitement en Continu],
+  kind: table,
   table(
     columns: (0.35fr, 0.35fr, 0.35fr),
     align: center + horizon,
@@ -1344,7 +1355,8 @@ Le choix entre Batch et Streaming n'est pas binaire mais dépend du compromis ac
      stroke: 1pt + black,
       image("../images/streamVSbatch.jpg", width: 12cm)
     ),
-    caption: [Traitement par Lots  Vs Traitement en Continu  ]
+    caption: [Traitement par Lots  Vs Traitement en Continu  ],
+  kind: image
   )
 ]
 
@@ -1380,6 +1392,7 @@ Le terme NoSQL @stonebraker2011 désigne un certain nombre de SGBD abandonnant l
     [Neo4j, Amazon Neptune],
   ),
   caption: [Les quatre grandes familles NoSQL],
+  kind: table,
 )
 
 ==== MongoDB : modèle orienté documents

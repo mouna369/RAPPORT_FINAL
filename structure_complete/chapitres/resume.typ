@@ -1,21 +1,25 @@
 // ====================================
-// RÉSUMÉ
-// Fichier : chapitres/resume.typ
+// RÉSUMÉ — VERSION CORRIGÉE
 // ====================================
 
 #set par(justify: true)
+
 = Résumé
 
+#v(1cm)
 
-#h(0.5cm) Ce mémoire présente la conception et l'implémentation d'une plateforme intelligente d'analyse des sentiments clients, développée pour Algérie Télécom dans le cadre d'un projet de fin d'études réalisé au sein de la Division des Systèmes d'Information. La problématique centrale tient à l'impossibilité de traiter manuellement les flux de commentaires multilingues — darija, arabizi, français — générés quotidiennement sur les réseaux sociaux par les abonnés de l'opérateur.
+#h(0.5cm)
+Ce mémoire présente la conception et le développement d’une plateforme intelligente d’analyse des sentiments clients, réalisée pour Algérie Télécom dans le cadre d’un projet de fin d’études mené au sein de la Division des Systèmes d’Information. La problématique principale réside dans la difficulté de traiter manuellement les flux massifs de commentaires multilingues — darija algérienne, arabizi et français — publiés quotidiennement par les abonnés sur les réseaux sociaux.
 
-#h(0.5cm)L'architecture proposée repose sur un pipeline Big Data distribué : Apache Kafka pour l'ingestion en streaming, un cluster Apache Spark (1 master, 3 workers) conteneurisé sous Docker pour le traitement parallèle, et MongoDB comme base de stockage NoSQL. Le module de normalisation linguistique traite les spécificités du dialecte algérien — code-switching, arabizi, variations régionales — via un dictionnaire unifié et des règles de conversion phonético-graphique.
+#h(0.5cm)
+L’architecture proposée repose sur un pipeline Big Data distribué intégrant Apache Kafka pour l’ingestion des données en streaming, un cluster Apache Spark conteneurisé sous Docker pour le traitement parallèle distribué, ainsi qu’une base de données NoSQL MongoDB pour le stockage flexible des données. Le module de normalisation linguistique prend en charge les spécificités du dialecte algérien, notamment le code-switching, l’arabizi et les variations régionales, à l’aide d’un dictionnaire unifié et de règles de conversion phonético-graphique.
 
-#h(0.5cm)La classification des sentiments s'appuie sur DziriBERT, modèle Transformer pré-entraîné sur 1,1 million de tweets algériens, fine-tuné sur un corpus de 24 046 commentaires annotés issus des pages sociales d'Algérie Télécom. L'intégration de flags sémantiques, d'une vectorisation TF-IDF à 150 dimensions et d'un rééquilibrage des classes permet d'atteindre une accuracy de 96,18 % et un F1-macro de 0,9617. Un classifieur secondaire identifie 12 motifs d'interaction (réseau, facturation, service client, etc.) avec une accuracy de 77,3 %.
+#h(0.5cm)
+La classification des sentiments s’appuie sur DziriBERT, un modèle Transformer pré-entraîné sur 1,1 million de tweets algériens, puis affiné sur un corpus de 24 046 commentaires annotés issus des pages sociales d’Algérie Télécom. L’intégration de caractéristiques sémantiques, d’une vectorisation TF-IDF et d’un mécanisme de rééquilibrage des classes a permis d’atteindre une accuracy de 96,18 % ainsi qu’un score F1-macro de 0,9617. Un classifieur secondaire identifie également 12 catégories d’interactions, telles que les problèmes réseau, la facturation ou le service client, avec une accuracy de 77,3 %.
 
-#h(0.5cm)Les résultats sont restitués dans un tableau de bord Plotly Dash en quasi-temps réel, avec un système d'alertes à deux niveaux, un assistant conversationnel basé sur Groq LLaMA 3.3 et un moteur de recommandations métier. L'ensemble du corpus, réduit de 26 576 à 24 046 documents après déduplication par similarité Jaccard-Mots, est indexé sur 51 champs structurés.
+#h(0.5cm)
+Les résultats sont restitués à travers un tableau de bord interactif développé avec Plotly Dash et fonctionnant en quasi-temps réel. La plateforme intègre également un système d’alertes à deux niveaux, un assistant conversationnel fondé sur le modèle Groq LLaMA 3.3, ainsi qu’un moteur de recommandations destiné au support décisionnel. Après une phase de déduplication basée sur la similarité lexicale, le corpus a été réduit de 26 576 à 24 046 commentaires exploitables.
 
-*Mots-clés :* analyse de sentiments, darija algérien, Algérie Télécom, DziriBERT, Big Data, Apache Spark, NLP, tableau de bord interactif, réseaux sociaux.
-
+*Mots-clés :* analyse des sentiments, darija algérienne, Algérie Télécom, DziriBERT, Big Data, Apache Spark, traitement automatique du langage naturel, tableau de bord interactif, réseaux sociaux.
 
 #pagebreak()

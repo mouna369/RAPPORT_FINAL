@@ -193,7 +193,8 @@ L'installation est optimisée pour minimiser la taille de l'image :
       stroke: 2pt + black,
       image("../images/Installation_image.png", width: 7cm)
     ),
-    caption: [Extrait du Dockerfile.worker illustrant l'installation optimisée des dépendances NLP.]
+    caption: [Extrait du Dockerfile.worker illustrant l'installation optimisée des dépendances NLP.],
+  kind: image
   )
 ]
 
@@ -219,7 +220,8 @@ Le cluster est composé d'un nœud maître et de trois nœuds travailleurs, conf
       stroke: 2pt + black,
       image("../images/docker_configuration.png", width: 12cm)
     ),
-    caption: [Configuration détaillée des services clés.]
+    caption: [Configuration détaillée des services clés.],
+  kind: image
   )
 ]
 
@@ -252,7 +254,8 @@ L'accès à l'interface web du Master (http://localhost:8080) confirme le déplo
       stroke: 1.5pt + black,
       image("../images/interface_spark.jpg", width: 15cm)
     ),
-    caption: [Interface Spark UI.]
+    caption: [Interface Spark UI.],
+  kind: image
   )
 ]
 
@@ -264,7 +267,8 @@ L'accès à l'interface web du Master (http://localhost:8080) confirme le déplo
       stroke: 1.5pt + black,
       image("../images/INTERFACEAPPLICATION.jpg", width: 15cm)
     ),
-    caption: [Interface Application UI.]
+    caption: [Interface Application UI.],
+  kind: image
   )
 ]
   
@@ -305,7 +309,8 @@ Cette méthode aident à absorber la charge venant des réseaux sociaux sans p
       stroke: 1pt + black,
       inset: 5pt, image("../images/kafka_pepline.jpg", width: 15cm)
     ),
-    caption: [Architecture du Pipeline de Streaming Temps Réel.]
+    caption: [Architecture du Pipeline de Streaming Temps Réel.],
+  kind: image
   )
 ]
 
@@ -431,7 +436,8 @@ Comme illustré dans la Figure , l'interface permet de visualiser en temps réel
       stroke: 1.5pt + black,
       image("../images/interface_fakf_ui.png", width: 15cm)
     ),
-    caption: [Interface Kafka UI. ]
+    caption: [Interface Kafka UI. ],
+  kind: image
   )
 ]
 
@@ -453,7 +459,8 @@ Comme illustré dans la Figure , l'interface permet de visualiser en temps réel
     stroke : 1.5pt +black ,
   image("../images/outil_social_listing.jpg", width: 90% ),
    ),
-  caption: [Interface de l'outil interne de veille utilisé par le département Social Media d'Algérie Télécom (vue tableau de bord).]
+  caption: [Interface de l'outil interne de veille utilisé par le département Social Media d'Algérie Télécom (vue tableau de bord).],
+  kind: image
 )
 #v(0.5cm)
 L'accès à ces données internes confère des avantages notables, résumés dans le tableau suivant :
@@ -474,7 +481,8 @@ L'accès à ces données internes confère des avantages notables, résumés dan
     [Ancrage local], [Expression naturelle du dialecte algérien en contexte télécom],
     [Labeling implicite], [Présence de la réponse modérateur comme proxy de la qualité de prise en charge],
   ),
-  caption: [Principaux avantages des données fournies par Algérie Télécom]
+  caption: [Principaux avantages des données fournies par Algérie Télécom],
+  kind: table
 )
 ==== Périmètre des plateformes et hétérogénéité des données
 
@@ -499,7 +507,8 @@ L'accès à ces données internes confère des avantages notables, résumés dan
     [LinkedIn], [Retours d'experts et partenaires],
     [YouTube], [Commentaires sur les tutoriels et communiqués],
   ),
-  caption: [Plateformes sociales couvertes par la collecte]
+  caption: [Plateformes sociales couvertes par la collecte],
+  kind: table
 )
 ==== Format des données et protocole de collecte
 #h(0.5cm) *Méthodologie de collecte* : La stratégie de récupération des données adoptée au sein d’Algérie Télécom se distingue des méthodes conventionnelles d’extraction automatisée par web scraping. Afin de garantir une sécurité informatique optimale et de se conformer aux politiques d’utilisation des réseaux sociaux, l’entreprise privilégie une approche rigoureuse reposant exclusivement sur son outil de modération interne. Ce choix permet également d'assurer le respect de la confidentialité et la protection des données à caractère personnel des usagers, évitant ainsi les risques éthiques et techniques liés aux méthodes de collecte non officielles.
@@ -524,7 +533,8 @@ Au terme de ce processus, les données sont consolidées et exportées sous la f
     [Janvier 2026], [8 230], [31,0 %],
     [*Total*], [*26 576*], [*100 %*],
   ),
-  caption: [Répartition des données brutes par mois]
+  caption: [Répartition des données brutes par mois],
+  kind: table
 )
 Chaque fichier agrège simultanément les commentaires des usagers et les interventions des modérateurs. Cette structure de données appariées constitue un levier d'analyse pertinent, permettant d'évaluer non seulement la polarité des sentiments exprimés par la clientèle, mais également l’adéquation et la qualité des réponses fournies par le service social media.
 ==== Analyse de la structure et du contenu des bases de données
@@ -549,14 +559,16 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
     [Date], [Horodatage de la publication], [100 %],
     [Actions], [Métadonnées supplémentaires], [Négligeable],
   ),
-  caption: [Description des colonnes des fichiers Excel sources]
+  caption: [Description des colonnes des fichiers Excel sources],
+  kind: table
 )
 
 #figure(
   block(
     stroke : 1.5pt+black,
   image("../images/capture_donneesNov.png", width: 98%),),
-  caption: [Extrait des données brutes du fichier Excel pour novembre 2025, montrant les commentaires clients et réponses modérateur.]
+  caption: [Extrait des données brutes du fichier Excel pour novembre 2025, montrant les commentaires clients et réponses modérateur.],
+  kind: image
 )
 #let remarque(content) = block(
   fill: luma(240),
@@ -605,6 +617,7 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   caption: [Séquence opérationnelle du processus d'import Excel vers MongoDB],
+  kind: table,
   table(
     columns: (1.2fr, 3.2fr, 1.5fr),
     inset: (x: 7pt, y: 7pt),
@@ -634,6 +647,7 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   caption: [Statistiques d'importation des trois fichiers sources],
+  kind: table,
   table(
     columns: (1.5fr, 1.2fr, 1.5fr, 1.5fr),
     inset: (x: 7pt, y: 6pt),
@@ -668,7 +682,8 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   image("../images/mongodb_documents_view.jpg", width: 100%),
-  caption: [Visualisation de documents MongoDB dans l'interface Compass - Collection commentaires_bruts]
+  caption: [Visualisation de documents MongoDB dans l'interface Compass - Collection commentaires_bruts],
+  kind: image
 ) <mongodb_documents>
 
 #h(0.5cm)Voici un exemple de mes documents MongoDB:
@@ -754,6 +769,7 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   caption: [Machine à états du champ statut illustrant le cycle de vie d'un commentaire],
+  kind: table,
   table(
     columns: (1fr, 2.5fr, 2fr),
     inset: (x: 6pt, y: 6pt),
@@ -777,6 +793,7 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   caption: [Index créés sur la collection commentaires_bruts et leur impact],
+  kind: table,
   table(
     columns: (1.8fr, 2.2fr, 1.5fr),
     inset: (x: 7pt, y: 6pt),
@@ -820,6 +837,7 @@ Chaque fichier agrège simultanément les commentaires des usagers et les interv
 
 #figure(
   caption: [Statistiques de stockage de la collection MongoDB],
+  kind: table,
   table(
     columns: (2fr, 1.5fr),
     inset: (x: 7pt, y: 6pt),
@@ -959,7 +977,8 @@ Ce système de nettoyage est conçu pour un déploiement distribué sur Apache S
     [10], [Filtrage des contenus non informatifs : interjections vides, termes techniques isolés, prix seuls, numéros de téléphone, bruits clavier, questions vagues, messages copiés-collés],
     [11], [Suppression des lignes résiduelles vides ou réduites à de la ponctuation],
   ),
-  caption: [Ordre séquentiel des opérations de nettoyage appliquées à chaque commentaire]
+  caption: [Ordre séquentiel des opérations de nettoyage appliquées à chaque commentaire],
+  kind: table
 )
 
 ===== Traitement des émojis : extraction et suppression
@@ -976,6 +995,7 @@ Ce processus se déroule en trois étapes distinctes :
 
 #figure(
   caption: [Exemple de traitement d’un commentaire contenant des émojis : suppression, extraction et association des sentiments.],
+  kind: table,
   table(
     columns: (auto, auto),
     align: (left, left),
@@ -1057,7 +1077,8 @@ Chaque suppression est répertoriée avec une justification pour garantir une tr
     [*Contenu vide*], [$"ok merci "$], [$"(supprimé)"$],
     [*Terme technique seul*], [$"adsl 4g fibre"$], [$"(supprimé)"$],
   ),
-  caption: [Exemples de transformations appliquées par le pipeline de nettoyage]
+  caption: [Exemples de transformations appliquées par le pipeline de nettoyage],
+  kind: table
 )
 ==== Normalisation du texte
 #h(0.5cm) Après avoir supprimé les doublons et éliminé les parasites formels des commentaires, le corpus reste marqué par une profonde hétérogénéité linguistique. Les messages des clients d'Algérie Télécom mélangent en effet trois registres qui cohabitent souvent dans un même commentaire : l’arabe standard et dialectal (darija algérienne), le français oral, ainsi que l’arabizi. Ce dernier est une translittération phonétique de l'arabe en caractères latins, parfois combinée à des chiffres, largement répandue dans les interactions numériques en Algérie. À cette complexité s’ajoutent des fautes d’orthographe fréquentes, des abréviations spécifiques au domaine des télécoms, différentes variantes graphiques d’un même mot et des expressions typiquement dialectales, rendant leur traitement difficile pour les modèles de traitement automatique du langage naturel sans un prétraitement adapté.
@@ -1071,6 +1092,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Normalisation des variantes orthographiques arabes],
+  kind: table,
   table(
     columns: (1.5fr, 1.5fr, 1.8fr),
     inset: (x: 7pt, y: 6pt),
@@ -1088,6 +1110,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Conversion des émojis en étiquettes sémantiques arabes],
+  kind: table,
   table(
     columns: (1fr, 1fr, 1fr),
     inset: (x: 9pt, y: 5pt),
@@ -1109,6 +1132,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Conversion des mots arabizi complets vers l'arabe],
+  kind: table,
   table(
     columns: (1.3fr, 1.5fr, 2fr),
     inset: (x: 7pt, y: 5pt),
@@ -1129,6 +1153,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Conversion des digrammes et monogrammes phonétiques],
+  kind: table,
   table(
     columns: (1fr, 1fr, 1fr, 1fr),
     inset: (x: 5pt, y: 5pt),
@@ -1150,6 +1175,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Conversion des mots hybrides (lettres et chiffres)],
+  kind: table,
   table(
     columns: (1fr, 1fr, 1fr),
     inset: (x: 7pt, y: 5pt),
@@ -1170,6 +1196,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Expansion des abréviations françaises et techniques],
+  kind: table,
   table(
     columns: (1fr, 1.5fr, 2.2fr),
     inset: (x: 7pt, y: 5pt),
@@ -1195,6 +1222,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Corrections des fautes orthographiques fréquentes],
+  kind: table,
   table(
     columns: (1.3fr, 1.5fr, 2fr),
     inset: (x: 7pt, y: 5pt),
@@ -1221,6 +1249,7 @@ Le dictionnaire unifié, développé et affiné progressivement tout au long du 
 
 #figure(
   caption: [Séparation des préfixes arabes],
+  kind: table,
   table(
     columns: (1.3fr, 1.5fr, 2fr),
     inset: (x: 8pt, y: 5pt),
@@ -1242,6 +1271,7 @@ En parallèle, les #emph[expressions composées protégées] sont préservées d
 
 #figure(
   caption: [Expressions composées protégées],
+  kind: table,
   table(
     columns: (1.5fr, 2.2fr),
     inset: (x: 7pt, y: 5pt),
@@ -1264,6 +1294,7 @@ Les opérations spécifiques à ce mode incluent :
 
 #figure(
   caption: [Exemples de stopwords supprimés (mode Full)],
+  kind: table,
   table(
     columns: (1.5fr, 1.5fr, 1.8fr),
     inset: (x: 7pt, y: 5pt),
@@ -1382,6 +1413,7 @@ Ainsi, la version de normalisation spécifique à BERT a été conçue pour adop
 
 #figure(
   caption: [Application du tokenizer sur des commentaires après normalisation Full.],
+  kind: table,
   table(
     columns: (1.4fr, 2.2fr, 2.2fr),
     inset: (x: 6pt, y: 5pt),
@@ -1458,6 +1490,7 @@ Le système d'étiquetage analyse chaque commentaire pour y détecter la présen
 
 #figure(
   caption: [Catégories sémantiques détectées par le module d'étiquetage.],
+  kind: table,
   table(
     columns: (1.2fr, 1.5fr, 3.5fr),
     inset: (x: 7pt, y: 8pt),
@@ -1477,6 +1510,7 @@ Le système d'étiquetage analyse chaque commentaire pour y détecter la présen
 #h(0.5cm) Face au caractère non structuré et imprévisible du dialecte algérien sur les réseaux sociaux, l'approche fondée sur des règles (rule-based) présente des avantages notables : une transparence complète, puisque les motifs de détection sont explicités dans un dictionnaire unique. Ce dernier est structuré en grandes catégories lexicales:
 #figure(
   caption: [Exemples de motifs dans le dictionnaire centralisé des flags.],
+  kind: table,
   table(
     columns: (1.6fr, 1.5fr, 2.5fr),
     inset: (x: 7pt, y: 7pt),
@@ -1498,6 +1532,7 @@ Le système d'étiquetage analyse chaque commentaire pour y détecter la présen
 
 #figure(
   caption: [Logique de détection du flag `suggestion` s'appuyant sur 3 conditions (`A ∧ B ∧ C`).],
+  kind: table,
   table(
     columns: (1.75fr, 3.5fr, 1.5fr),
     inset: (x: 7.5pt, y: 7pt),
