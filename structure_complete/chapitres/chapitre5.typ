@@ -4148,19 +4148,10 @@ La plateforme orchestre l'ensemble du cycle de vie analytique : collecte des don
 
     image("../images/page_dashbored.png", width: 15cm),
   ),
-) <fig:tableau_de_bord>
 
-
-#figure(
-  rect(
-    fill: rgb("#e3f2fd"),
-
-    radius: 2pt,
-    stroke: rgb("#062abb"),
-    image("../images/page_dash2.png", width: 15cm),
-  ),
   caption: [Tableau de bord Satisfaction Client (vue globale).],
 ) <fig:tableau_de_bord>
+
 
 ==== Indicateurs clés de performance (KPIs)
 #h(0.5cm)Cinq indicateurs disposés en grille horizontale constituent la zone d'information prioritaire. Chaque indicateur intègre une icône sémantique, une valeur principale en grand format, une pastille de variation comparative par rapport à la période précédente, et une infobulle contextuelle accessible au survol.
@@ -4197,13 +4188,14 @@ Ce codage asymétrique reflète la logique métier réelle,les deux indicateurs 
 ==== Comparaison mensuelle
 #h(0.5cm)La carte de comparaison mensuelle présente, pour chaque mois disponible, le volume total de commentaires, le score sentiment avec sa variation par rapport au mois précédent, le taux négatif et le taux de satisfaction positif. Le mois le plus récent est visuellement mis en évidence. Les variations sont codifiées par des flèches directionnelles colorées.
 ==== Évolution temporelle du sentiment
-#h(0.5cm) Un graphique bi-axes combine deux représentations sur un axe temporel mensuel : l'axe primaire trace l'évolution du score moyen assorti d'une ligne de référence à 0, frontière entre registre négatif et neutre, tandis que l'axe secondaire encode le volume de commentaires par barres verticales. Nous notons que la superposition de ces deux séries permet d'identifier visuellement les mois où un pic de volume coïncide avec une dégradation du sentiment, situation caractéristique d'une crise réseau étendue. Un fond semi-transparent rouge balise les périodes de dégradation, éliminant la nécessité d'une lecture exhaustive des valeurs numériques.
+#h(0.5cm) Un graphique bi-axes combine deux représentations sur un axe temporel mensuel : *l'axe primaire* trace l'évolution du score moyen assorti d'une ligne de référence à 0, frontière entre registre négatif et neutre, tandis que *l'axe secondaire* encode le volume de commentaires par barres verticales.
+
+Nous notons que la superposition de ces deux séries permet d'identifier visuellement les mois où un pic de volume coïncide avec une dégradation du sentiment, situation caractéristique d'une crise réseau étendue. Un fond semi-transparent rouge balise les périodes de dégradation, éliminant la nécessité d'une lecture exhaustive des valeurs numériques.
 
 ==== Thèmes détectés et répartition linguistique
 #h(0.5cm)Un histogramme horizontal présente les cinq thèmes d'insatisfaction les plus fréquents. La longueur de chaque barre encode le volume total ,l'infobulle associée expose simultanément le volume absolu et le taux négatif propre au thème. Un histogramme vertical décompose les langues détectées : Arabe Darija, Français, Arabe Classique avec annotation externe des volumes et pourcentages. En bas de page, une barre de progression traduit le score de santé global de la relation client en une valeur unique lisible d'un coup d'œil.
 
 
-==== Historique des alertes
 
 
 
@@ -4266,7 +4258,19 @@ La section « Impact des événements » quantifie l'effet de trois événements
   )
 ]
 
-Ces écarts quantifiés méritent attention. La panne réseau du 15 décembre génère un impact six fois supérieur à celui de la mise à jour applicative — ce ratio confirme empiriquement la hiérarchie des sources d'insatisfaction et justifie la priorisation des interventions réseau dans les plans d'action. La partie inférieure de la page présente deux graphiques complémentaires : la répartition des avis par heure (barres empilées Insatisfaits/Satisfaits) et le volume de messages reçus par heure, permettant d'identifier les pics d'activité et les moments critiques de la journée.
+Ces écarts quantifiés méritent attention. La panne réseau du 15 décembre génère un impact six fois supérieur à celui de la mise à jour applicative,ce ratio confirme empiriquement la hiérarchie des sources d'insatisfaction et justifie la priorisation des interventions réseau dans les plans d'action. La partie inférieure de la page présente deux graphiques complémentaires : la répartition des avis par heure (barres empilées Insatisfaits/Satisfaits) et le volume de messages reçus par heure, permettant d'identifier les pics d'activité et les moments critiques de la journée.
+
+
+La partie inférieure de la page s'articule autour de *quatre visualisations complémentaires*, chacune éclairant une dimension distincte du comportement temporel des clients.
+
+- *Répartition des avis par heure.* Un histogramme empilé (Insatisfaits en rouge, Satisfaits en vert) distribue les commentaires sur 19 tranches horaires. Nous observons que le taux d'insatisfaction atteint son pic à 6h00 (92 %), puis se stabilise entre 72 % et 85 % sur le reste de la journée — le creux vert, bien que structurellement minoritaire, se concentre aux extrémités de la plage nocturne. Court. Mais révélateur : la nuit ne détend pas les frustrations.
+
+- *Volume de messages reçus par heure.* Un histogramme simple encode le flux entrant par tranche horaire. Le volume est quasi nul entre 0h et 5h (41 messages à 0h), puis monte brusquement à partir de 6h pour atteindre des pics entre 1 500 et 2 175 messages sur la plage 6h–22h. Cette courbe d'activité conditionne directement le dimensionnement des équipes de modération.
+
+- *Score de satisfaction par heure.* Une courbe temporelle trace l'évolution du score moyen sur l'axe [-1, +1]. Le score reste confiné entre -0,5 et -1 sur l'ensemble de la journée, avec un léger redressement observable autour de 6h–7h avant de replonger. Les points d'anomalie sont matérialisés par des marqueurs rouges, signalant les tranches où le score franchit le seuil de tolérance défini dans les paramètres système.
+
+- *Évolution hebdomadaire.* Un tableau récapitulatif liste les semaines analysées avec, pour chacune, le score moyen, le taux négatif et le volume de commentaires. Les données couvrent les semaines 2025-S49 à 2026-S05 ; le taux négatif oscille entre 60,9 % (semaine 2026-S03) et 82,1 % (semaine 2026-S02), traduisant une variabilité hebdomadaire réelle que les seuls indicateurs mensuels masqueraient.
+
 
 
 === Exploration des commentaires clients
@@ -4285,7 +4289,7 @@ Ces écarts quantifiés méritent attention. La panne réseau du 15 décembre g�
 
 #h(0.5cm)Le tableau des résultats est paginé (25, 50, 100 ou 200 lignes par page) et restitue pour chaque entrée : date et heure, texte du commentaire, sentiment détecté (Négatif / Positif / Neutre), score NLP, thème associé, source, langue, niveau de frustration, statut de modération et bouton « Voir ».
 #h(0.5cm) Un clic sur ce bouton ouvre une fiche modale exposant l'intégralité du commentaire et l'ensemble de ses métadonnées NLP.
-#h(0.5cm) Le bouton « Exporter CSV » déclenche le téléchargement de tous les commentaires correspondant aux filtres actifs — sans limitation de volume.
+
 
 
 #figure(
@@ -4302,96 +4306,139 @@ Ces écarts quantifiés méritent attention. La panne réseau du 15 décembre g�
 
 
 
+#h(0.5cm) Le bouton « Exporter CSV » déclenche le téléchargement de tous les commentaires correspondant aux filtres actifs sans limitation de volume.
+
+
+=== Thèmes et analyse temporelle approfondie
+
+#h(0.5cm)La page *« Thèmes & Analyse Temporelle » * répond à deux questions opérationnelles : quels sujets concentrent le plus d'insatisfaction, et quels mois ont enregistré les dégradations les plus sévères ? Elle intègre un mécanisme de détection automatique des anomalies statistiques
+
+
+
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
+
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/page_theme.png", width: 15cm),
+  ),
+  caption: [Page Thèmes & Analyse Temporelle avec détection d'anomalies],
+) <fig:page_theme>
+
+Six sections structurent cette page :
+
+- *Évolution mensuelle par thème* : Un graphique linéaire multi-courbes trace la trajectoire de chaque thème — Service Clientèle, Information Générale, Hors Sujet, Réseau Technique, Installation Équipement, Facturation Tarifs — sur l'ensemble de la période analysée. La comparaison visuelle des courbes révèle les thèmes à dynamique dégradante versus ceux qui se stabilisent.
+- *Détection des anomalies* : Le graphique de score temporel intègre une zone de tolérance grisée calculée à partir des écarts-types de la série. Lorsqu'aucun point ne franchit les bornes de cette zone, une bannière verte « Aucune anomalie détectée » confirme la stabilité du système. Ce mécanisme évite aux opérateurs de scruter manuellement des séries temporelles denses.
+- *Taux d'insatisfaction par sous-thème* : Un histogramme horizontal présente les taux par catégorie : Absence Service (97 %), Problème Technique (94 %), Délai Installation (91 %), Autre (88 %), Facturation Offre (76 %), Service Client (69 %), Demande Amélioration (61 %), Social Non Pertinent (49 %), Demande Information (15 %), Satisfaction Positive (11 %). Nous observons que les deux premières catégories cumulent des taux dépassant 90 %, ce qui indique une insatisfaction structurelle — non conjoncturelle — sur les dimensions de disponibilité et de fiabilité réseau.
+- *Sujets les plus abordés.* : Le classement priorisé des thèmes confronte volume, taux d'insatisfaction et niveau de criticité : Réseau Technique (9 092 messages, 95,1 % insatisfaits — Critique), Hors Sujet (4 993 messages, 79,4 % insatisfaits — Critique), Information Générale (2 293 messages, 14,7 % insatisfaits — Normal).
+- *Répartition des raisons* : Un diagramme en anneau décompose les 23 521 messages détectés selon leur raison principale. Problème Technique domine avec 23,7 % du volume total, suivi d'Autre (16,7 %), Absence Service (15 %), Demande Information (9,75 %), Service Client (8,63 %), Délai Installation (8,52 %), Facturation Offre (7,64 %), Social Non Pertinent (4,53 %), Demande Amélioration (4,18 %) et Satisfaction Positive (1,4 %). Nous retenons que les trois premières catégories — Problème Technique, Autre et Absence Service — concentrent à elles seules près de 55 % de l'ensemble des raisons détectées, ce qui confirme empiriquement la prédominance des défaillances réseau dans le corpus analysé. La visualisation en anneau permet une lecture proportionnelle immédiate, sans nécessiter de parcourir une liste de valeurs brutes.
+
+- *Vocabulaire clients* : Un nuage de mots synthétise les termes les plus fréquents extraits automatiquement des commentaires.
+  Les mots dominants : *fibre*, *optique*, *internet*, *الانترنت*, *اتصالات* , tracent sans ambiguïté le champ sémantique central des préoccupations clients : la connectivité haut débit et l'accès à la fibre optique. Termes arabes et français coexistent dans le nuage, reflétant la réalité multilingue du corpus (Arabe Darija, Français, Arabe Classique). La taille de chaque mot encode sa fréquence d'apparition ; les mots périphériques plus petits : *adsl*, *modem*, *idoom* , permettent de qualifier secondairement les technologies et services concernés.
+
+=== Assistant conversationnel ClienTel Pulse
+#h(0.5cm)ClienTel Pulse est l'assistant conversationnel décisionnel intégré à la plateforme. Il permet aux équipes de formuler des questions en langage naturel sur les données de satisfaction client et d'obtenir en retour des synthèses opérationnelles, des recommandations d'action et des projections de scénarios.
 
 
 
 
 
 
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
+
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/page_charbot.png", width: 15cm),
+  ),
+  caption: [ Interface de l'assistant conversationnel ClienTel Pulse],
+) <fig:page_theme>
 
 
 
 
+==== Architecture et intentions reconnues
+#h(0.5cm)L'assistant repose sur une architecture à trois niveaux qui traite séquentiellement chaque requête entrante. Le premier niveau *compréhension du langage naturel (NLU)* extrait l'intention et les filtres sémantiques de la question. Le deuxième aiguille vers le *module de réponse adapté*. Le troisième génère *la réponse via le modèle Groq LLaMA 3.3* ou, pour les cas structurés, via *un moteur de règles métier déterministe*.
 
 
 
+#align(center)[
+  #figure(
+    table(
+      columns: (0.5fr, 1fr),
+      align: (left, left),
+      stroke: 1pt,
+      fill: (_, row) => if row == 0 {} else if calc.odd(row) {} else { none },
+
+      [*Intention*], [*Description*],
+      [Analyse globale], [Synthèse des indicateurs de satisfaction],
+      [Aide contextuelle], [Explication des fonctionnalités du système],
+      [Analyse commentaire], [Évaluation d'un commentaire soumis par l'agent],
+      [Recommandations], [Actions correctives selon les seuils dépassés],
+      [Détection d'alertes], [Identification des crises en cours],
+      [Tendances temporelles], [Évolution du sentiment dans le temps],
+      [Simulations what-if], [Projection de scénarios d'amélioration],
+      [Rapport manager], [Génération d'un rapport synthétique],
+      [Benchmark S vs M], [Comparaison semaine vs mois],
+      [Discussion générale], [Recherche augmentée (RAG) sur la base de données],
+    ),
+    caption: [Intentions du chatbot ClienTel Pulse et leurs descriptions],
+  )
+]
+
+==== Recherche augmentée par similarité sémantique (RAG)
+#h(0.5cm)Lorsqu'une question ne correspond à aucune intention répertoriée, le système active le module RAG. La question est convertie en vecteur numérique ; MongoDB identifie alors les cinq commentaires dont la représentation vectorielle présente la similarité cosinus la plus élevée avec la requête. Ces commentaires sont transmis comme contexte au modèle de langage, qui génère une réponse synthétique ancrée dans des données réelles. Les sources sont affichées à l'utilisateur garantissant traçabilité et vérifiabilité de chaque réponse produite.
 
 
 
+==== Moteur de recommandations et simulation de scénarios
+#h(0.5cm)Le module de recommandations applique des règles métier déclenchées automatiquement lorsque des seuils prédéfinis sont franchis :
+
+#align(center)[
+  #figure(
+    table(
+      columns: (auto, auto, auto),
+      align: (left, center, left),
+      stroke: 1pt,
+      fill: (_, row) => if row == 0 {} else if calc.odd(row) {} else { none },
+
+      [*Condition*], [*Niveau*], [*Action recommandée*],
+      [Taux négatif > 50\%], [Critique], [Cellule de crise — action sous 48 heures],
+      [Taux négatif entre 35 et 50\%], [Élevé], [Analyse par source et thème — sous 1 semaine],
+      [Frustration > 40\%], [Critique], [Réponse prioritaire < 2h + formation des agents],
+      [Demandes sans réponse > 15\%], [Élevé], [Activation d'un bot de réponse automatique],
+    ),
+    caption: [Seuils d'alerte et actions recommandées],
+  )
+]
+
+#h(0.5cm)Trois scénarios de simulation sont préconfigurés : répondre à toutes les demandes sous quatre heures, réduire les pannes réseau de 50 %, et former les agents à la gestion des frustrations. Pour chaque scénario, le système calcule la réduction estimée du taux négatif, le gain de satisfaction attendu et le niveau d'effort requis. Ce couplage simulation–effort est ce qui distingue le module d'un simple tableau de bord passif.
 
 
 
+=== Système d'alertes et notifications
+#h(0.5cm)Le système d'alertes surveille la plateforme en continu et déclenche des notifications selon un protocole à deux conditions cumulatives :
+
+- Le taux négatif des dernières 24 heures dépasse le seuil configurable (60 % par défaut).
+- Le volume absolu de commentaires négatifs excède 30 messages.
 
 
 
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
+
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/capture_alarme.png", width: 15cm),
+  ),
+  caption: [capture d'ecran de l'alerte],
+) <fig:capture_alarme>
 
 
-
-
-
-
-
-
-
-
-
-
-- Le *total commentaires* mesure la couverture d'écoute client sur la période complète.
-- Le *score sentiment moyen* agrège les scores sur l'intervalle $[-1, +1]$, avec un seuil de satisfaction fixé à $-0.2$.
-- Le *taux négatif global* signale une dégradation structurelle en calculant la proportion de commentaires négatifs sur l'ensemble de la période.
-- Le *taux négatif des dernières 24 heures* détecte les crises émergentes :
-  - sous 40 %, l'indicateur s'affiche en vert  entre le seuil configurable (20 % par défaut).
-  - 40 % en orange .
-  - 60 % en rouge.
-- Le compteur de *frustrations détectées* quantifie l'intensité émotionnelle négative en reportant le volume absolu et la proportion correspondante.
-
-- La comparaison entre le mois courant et le mois précédent s'active uniquement lorsque deux périodes mensuelles sont disponibles dans la base.
-- Les pastilles directionnelles codifient alors la favorable ou la défavorable selon la nature de l'indicateur : une baisse du taux négatif constitue une amélioration, une baisse de satisfaction une dégradation.
-
-== Visualisations principales
-
-=== Authentification par session
-
-- L'accès aux pages analytiques est protégé par un système d'authentification par session : les mots de passe sont stockés sous forme hachée, la session est détruite à la fermeture du navigateur, et les messages d'erreur restent volontairement génériques pour ne pas divulguer l'existence d'un compte.
-- La page d'inscription valide l'ensemble des champs obligatoires, la longueur minimale du mot de passe (huit caractères), la concordance des deux saisies, et l'acceptation des conditions d'utilisation.
-=== Distribution des sentiments et comparaison mensuelle
-
-- Un diagramme en anneau répartit les trois classes de sentiment *négatif, positif, neutre * en couleurs institutionnelles.
-- La zone centrale concentre trois lectures superposées : le taux négatif global en rouge grande taille, son libellé, et le score moyen dont la teinte varie selon la valeur.
-- Une légende horizontale sous le graphique restitue les volumes absolus, permettant de passer de la lecture proportionnelle à la lecture volumétrique.
-
-- La carte de comparaison mensuelle pour chaque mois, on observe le volume total, le score sentiment avec sa variation, le taux négatif et le taux de satisfaction positif.
-- Le mois le plus récent est visuellement mis en évidence .
-- les variations sont codifiées par des flèches directionnelles colorées.
-
-=== Évolution temporelle
-
-- *Graphique bi-axes* : combine deux représentations sur un axe temporel mensuel
-
-- *Axe primaire* : trace l’évolution du score moyen avec une ligne de référence à 0 (frontière neutre)
-
-- *Axe secondaire* : encode le volume de commentaires par barres verticales
-
-- *Annotation mensuelle* : affiche, en bas du graphique, le taux négatif correspondant
-
-- *Fond semi-transparent rouge* : signale visuellement les périodes de dégradation sans lecture exhaustive
-=== Thèmes d'insatisfaction et répartition linguistique
-
-- Un histogramme horizontal présente les cinq thèmes les plus fréquents.
-- La longueur de chaque barre encode le volume total.
-- l'infobulle expose simultanément le volume et le taux négatif spécifique au thème.
-- Un histogramme vertical répartit les langues et variétés détectées. Chaque barre affiche le volume absolu et le pourcentage en annotation externe.
-- Sous ce graphique, une barre de progression visualise le score de santé global, calculé comme combinaison pondérée du taux de satisfaction et du score sentiment moyen.
-
-=== Système d'alertes
-
-=== Détection et signalement des pics négatifs
-
-- *Conditions de déclenchement* (deux simultanément):
-
-  - Le taux négatif des dernières 24 heures dépasse le seuil configurable.
-
-  - Le volume absolu de commentaires négatifs excède cinq messages.
+La fenêtre modale d'alerte complète s'organise en quatre sections :
 
 - *Contexte calculé par le système*:
 
@@ -4423,80 +4470,132 @@ Ces écarts quantifiés méritent attention. La panne réseau du 15 décembre g�
 
   - Alerte sonore : notifie les équipes même lorsque le tableau de bord n’est pas au premier plan.
 
-=== Historique et actualisation
-
-- La zone inférieure expose un historique paginé des alertes  jusqu'à trente entrées  avec date, taux et volume négatifs, source principale, thèmes impliqués et statut (active ou résolue).
-- Un rafraîchissement automatique de cinq minutes maintient la cohérence des indicateurs .
-- un bouton d'actualisation manuelle déclenche une mise à jour immédiate.
 
 
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
 
-=== Assistant conversationnel décisionnel
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/page_modal_alarme.png", width: 15cm),
+  ),
+  caption: [La fenêtre modale d'alerte complète
+  ],
+) <fig:capture_alarme>
 
-==== Architecture et intentions prises en charge
+=== Historique des alertes et notifications
 
-L'assistant nommé « *ClienTel Pulse* » repose sur une architecture à trois niveaux :
-- Compréhension du langage naturel (NLU) pour détecter l'intention et extraire d'éventuels filtres.
-- Aiguillage vers le module de réponse adapté, puis génération de la réponse par modèle de langage (Groq LLaMA 3.3).
-- Par moteur de règles métier, ou par combinaison des deux.
+La zone inférieure du tableau de bord expose un historique paginé — jusqu'à 30 entrées sur les 30 derniers jours — où chaque entrée documente l'horodatage précis du pic et de l'arrêt, le thème impliqué, la source plateforme, le taux moyen, le volume de messages négatifs et le statut.
 
-Dix intentions sont reconnues :
-- Analyse globale des indicateurs.
-- Aide contextuelle.
-- Analyse d'un commentaire soumis par l'agent.
-- Recommandations correctives.
-- Détection d'alertes.
-- Analyse des tendances temporelles.
-- Simulations what-if.
-- Génération de rapport manager.
-- Benchmark semaine vs mois.
-- Discussion générale avec recherche augmentée.
+Deux statuts sont possibles. *Terminée* signale une alerte résolue ; une alerte sans ce marqueur reste active et exige un suivi. À titre d'illustration, les deux entrées enregistrées ci-dessous ont été produites en abaissant temporairement les seuils de déclenchement, afin de démontrer le fonctionnement du mécanisme d'enregistrement :
 
-==== Recherche augmentée par similarité sémantique (RAG)
+#align(center)[
+  #figure(
+    table(
+      columns: (auto, auto, auto, auto, auto, auto),
+      align: (left, left, left, center, center, center),
+      stroke: 1pt,
+      fill: (_, row) => if row == 0 {} else if calc.odd(row) {} else { none },
 
-Lorsqu'une question ne correspond à aucune intention spécifique, le système convertit la question en vecteur numérique, recherche dans MongoDB les cinq commentaires dont le vecteur est le plus proche par similarité cosinus, puis fournit ces commentaires comme contexte au modèle de langage pour générer une réponse synthétique. Les sources sont affichées à l'utilisateur  la vérifiabilité est ainsi garantie, et non simplement suggérée.
+      [*Date*], [*Pic → Arrêt*], [*Thème*], [*Taux moy.*], [*Volume*], [*Statut*],
+      [11/05/2026], [14h25 → 14h31], [Service Client], [50,3 %], [80 msgs], [Terminée],
+      [10/05/2026], [00h16 → 00h31], [Réseau Technique], [50,0 %], [80 msgs], [Terminée],
+    ),
+    caption: [Extrait de l'historique des alertes — entrées de démonstration],
+  )
+]
 
-==== Moteur de recommandations et simulation de scénarios
 
-Le module de recommandations applique des règles métier déclenchées automatiquement selon les seuils suivants :
 
-#table(
-  columns: (auto, auto, auto),
-  [*Condition*], [*Niveau*], [*Action recommandée*],
-  [Taux négatif > 50 %], [Critique], [Cellule de crise — action sous 48 h],
-  [Taux négatif entre 35 et 50 %], [Haut], [Analyse par source et thème — 1 semaine],
-  [Frustration > 40 %], [Critique], [Réponse prioritaire < 2 h + formation agents],
-  [Demandes sans réponse > 15 %], [Haut], [Activation d'un bot de réponse automatique],
+
+
+
+#block(
+  stroke: (left: 4pt + rgb("#dc2626")), // Bordure gauche rouge
+  inset: 12pt,
+  fill: rgb("#fef2f2"), // Fond rouge très clair
+  radius: 4pt,
+  width: 100%,
+  [
+    #align(left)[
+      #text(fill: rgb("#dc2626"), weight: "bold", size: 11pt)[*Remarque :*]
+    ]
+
+    #align(left)[
+      Ces deux alertes ont été déclenchées avec des seuils abaissés à 20 % (taux négatif) et 5 messages (volume) uniquement pour illustrer le fonctionnement du mécanisme d'enregistrement dans la zone historique.
+
+      Les seuils opérationnels réels du système sont fixés à *60 % de taux négatif* et *30 messages négatifs minimum* sur les dernières 24 heures.
+    ]
+  ],
 )
 
-Trois scénarios de simulation sont préconfigurés : répondre à la totalité des demandes sous quatre heures, réduire les pannes réseau de 50 %, et former les agents à la gestion des frustrations. Pour chaque scénario, le système calcule la réduction estimée du taux négatif et le gain de satisfaction attendu, en précisant le niveau d'effort requis.
+
+Un rafraîchissement automatique toutes les cinq minutes maintient la cohérence des indicateurs durée suffisante pour des crises dont la durée moyenne dépasse cette fenêtre. Un bouton d'actualisation manuelle permet les mises à jour immédiates lorsque la situation l'exige.
+
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/page_zone_historique.png", width: 15cm),
+  ),
+  caption: [Zone historique des alertes — tableau de bord principal],
+) <fig:capture_historique>
 
 
-=== Exploration des commentaires
+La page *Notifications* opère comme un centre de contrôle unifié : elle agrège en un seul espace l'ensemble des alertes, rapports et avis système générés par la plateforme, sans forcer l'opérateur à naviguer entre modules. Trois types de notifications coexistent, chacun portant un badge coloré identifiant sa catégorie.
 
-- Une page dédiée permet d'explorer les commentaires annotés par combinaison de neuf filtres indépendants :
-  - Onglets rapides par classe de sentiment.
-  - Recherche plein texte.
-  - Niveau de score.
-  - Plateforme source.
-  - Thème et plage de dates.
-  - Réinitialisation globale.
-- Les résultats s'affichent dans un tableau paginé (25, 50, 100 ou 200 lignes) avec les colonnes.
-- Un clic sur «* Voir* » ouvre une fiche modale exposant l'intégralité du commentaire et l'ensemble de ses métadonnées NLP.
-- Un bouton « *Exporter CSV* » permet de télécharger l'ensemble des commentaires filtrés
 
-=== Notifications centralisées
+Les notifications non lues s'affichent avec un fond coloré et un point rouge en marge droite. Le compteur global figure sur l'icône de cloche dans le bandeau supérieur ; en cas d'alertes critiques actives, ce compteur bascule sur un point d'exclamation « ! ».
 
-- La page Notifications centralise deux types d'alertes générées.
-- Les notifications non lues s'affichent avec un fond coloré et un point rouge.
-- Le compteur global figure sur l'icône de cloche dans le bandeau supérieur.
-- En cas d'alertes critiques actives, ce compteur est remplacé par un point d'exclamation « ! ».
+Les boutons *Rafraîchir* et *Tout marquer comme lu* permettent respectivement de synchroniser l'état en temps réel et de purger visuellement la file d'attente.
 
-=== Intégration temps réel avec le pipeline de streaming
+#figure(
+  rect(
+    fill: rgb("#e3f2fd"),
+    radius: 2pt,
+    stroke: rgb("#062abb"),
+    image("../images/page_notification.png", width: 15cm),
+  ),
+  caption: [Centre de Notifications],
+) <fig:capture_notification>
 
-- Dès qu'un nouveau commentaire est traité et stocké dans MongoDB, les agrégations utilisées par les fonctions de données se mettent à jour.
-- Au prochain cycle d'actualisation ou après un rafraîchissement manuel, l'ensemble des visualisations reflète le nouvel état de la base.
-- Ce couplage garantit une latence inférieure à la minute pour les indicateurs critiques d'alerte exigence opérationnelle du dispositif de surveillance 24h/24 et 7j/7.
+=== Intégration temps réel
+#h(0.5cm)La plateforme est conçue pour fonctionner en continu, 24h/24 et 7j/7, en synchronisation avec le pipeline de streaming de collecte des commentaires.
+
+#h(0.5cm)Dès qu'un nouveau commentaire est traité et persisté dans MongoDB, les agrégations utilisées par les fonctions de données se recalculent automatiquement. Au prochain cycle d'actualisation ou après un rafraîchissement manuel, l'ensemble des visualisations reflète le nouvel état de la base. Ce couplage garantit une latence inférieure à la minute pour les indicateurs critiques d'alerte. Exigence opérationnelle non négociable dans un contexte de surveillance réseau en temps réel.
+
+#align(center)[
+  #figure(
+    table(
+      columns: (auto, auto, 1fr),
+      align: (left, center, left),
+      stroke: 1pt,
+      fill: (_, row) => if row == 0 {} else if calc.odd(row) {} else { none },
+
+      [*Composant*], [*Technologie*], [*Rôle*],
+      [Interface web], [Plotly Dash (Python)], [Visualisations interactives multi-pages],
+      [Base de données], [MongoDB], [Stockage des commentaires et recherche vectorielle],
+      [NLP \& Sentiment], [DziriBERT + règles métier], [Classification et scoring des commentaires],
+      [LLM], [Groq LLaMA 3.3], [Génération de réponses conversationnelles],
+      [Streaming], [Pipeline temps réel], [Collecte et traitement des nouveaux commentaires],
+      [Authentification], [Sessions sécurisées], [Hachage des mots de passe, session détruite à la fermeture],
+      [Fuseau horaire], [UTC+1 (Algérie)], [Appliqué nativement à toutes les opérations temporelles],
+    ),
+    caption: [Synthèse des composants technologiques de la plateforme ClienTel],
+  )
+]
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4510,7 +4609,3 @@ Trois scénarios de simulation sont préconfigurés : répondre à la totalité 
 
 #h(0.5cm) L'assistant ClienTel Pulse, combinant reconnaissance d'intention, récupération augmentée par similarité cosinus et règles métier à seuils configurables, offre un niveau d'interactivité analytique que les tableaux de bord statiques traditionnels n'atteignent pas.Ces résultats constituent une base solide pour les extensions envisagées.
 
-#figure(
-  rotate(90deg, reflow: true, image("../images/global3.png", width: 30cm, height: 30cm)),
-  caption: [Tableau de bord global],
-) <fig:global3>
